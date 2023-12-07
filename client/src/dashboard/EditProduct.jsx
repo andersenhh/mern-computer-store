@@ -25,7 +25,7 @@ const EditProduct = () => {
   };
 
 
-  // handle book submission
+  // handle product submission
   const handleUpdate = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -39,10 +39,10 @@ const EditProduct = () => {
     // console.log(category);
 
     const price = form.price.value;
-    // console.log(bookDescription);
+    // console.log(price);
 
     const description = form.description.value;
-    // console.log(bookPDFURL);
+    // console.log(description);
 
 
     const updateProductObj = {
@@ -50,7 +50,7 @@ const EditProduct = () => {
     }
     // console.log(updateProductObj)
 
-    //update book data 
+    //update product data 
     fetch(`${import.meta.env.VITE_LocalHost}/product/${id}`,{
       method:"PATCH",
       headers: {
@@ -73,13 +73,13 @@ const EditProduct = () => {
         <div className="flex gap-8">
           <div className="lg:w-1/2">
             <div className="mb-2 block">
-              <Label htmlFor="name" value="name Product" />
+              <Label htmlFor="name" value="Product Name" />
             </div>
             <TextInput
               id="name"
               name="name"
               type="text"
-              placeholder="Book Name"
+              placeholder="Product Name"
               required
               defaultValue={name}
             />
@@ -87,7 +87,7 @@ const EditProduct = () => {
 
           <div className="lg:w-1/2">
             <div className="mb-2 block">
-              <Label htmlFor="price" value="price" />
+              <Label htmlFor="price" value="Price" />
             </div>
             <TextInput
               id="price"
@@ -138,7 +138,7 @@ const EditProduct = () => {
           </div>
         </div>
 
-        {/* bookdescription */}
+        {/* product description */}
 
         <div>
           <div className="mb-2 block">
@@ -156,13 +156,7 @@ const EditProduct = () => {
           />
         </div>
 
-        {/* book PDF Url */}
-        {/* <div>
-        <div className="mb-2 block">
-          <Label htmlFor="bookPDFURL" value="Book PDF Url" />
-        </div>
-        <TextInput id="bookPDFURL" type="text" name="bookPDFURL" placeholder="book PDF Url" defaultValue={bookPDFURL}  required />
-      </div> */}
+ 
 
       <Button type="submit" className="mt-5">
         Update

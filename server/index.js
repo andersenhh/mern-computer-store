@@ -32,25 +32,25 @@ async function run() {
     await client.connect();
 
     // Create a collection of documents
-    // const bookCollections = client.db("BookInventory").collection("books");
+
     const productCollections = client.db("ProductInventory").collection("prodocuts")
 
-    // Define the route to handle the book upload
+    // Define the route to handle the product upload
     app.post("/upload-product", async(req, res) => {
       const data = req.body;
       const result = await productCollections.insertOne(data);
       res.send(result);
     });
 
-    // get all books from the database
+    // get all products from the database
 
-    // app.get("/all-books", async (req, res) => {
-    //     const books = bookCollections.find();
-    //     const result = await books.toArray();
+    // app.get("/all-products", async (req, res) => {
+    //     const products = productCollections.find();
+    //     const result = await products.toArray();
     //     res.send(result);
     // })
 
-    //update a book data : patch or update methods
+    //update a product data : patch or update methods
     app.patch("/product/:id", async (req, res) => {
       const id = req.params.id;
       // console.log(id)
@@ -67,7 +67,7 @@ async function run() {
       res.send(result);
     })
 
-    // delete a book data
+    // delete a product data
     app.delete("/product/:id", async (req, res) => {
       const id = req.params.id;
       const filter = {_id : new ObjectId(id)}

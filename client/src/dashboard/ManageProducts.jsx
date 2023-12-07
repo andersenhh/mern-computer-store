@@ -10,7 +10,7 @@ const ManageProducts = () => {
       .then((data) => setAllProducts(data));
   }, []);
 
-  // delete book
+  // delete product
   const handleDelete = (id) => {
     // console.log(id);
     fetch(`${import.meta.env.VITE_LocalHost}/product/${id}`,{
@@ -18,7 +18,7 @@ const ManageProducts = () => {
     }).then(res => res.json()).then(data => {
       alert("Product is Deleted")
     
-      // setAllBooks(data);
+      // setAllProducts(data);
     })
       
     
@@ -28,7 +28,7 @@ const ManageProducts = () => {
     <div className="px-4 my-12">
       <h2 className="mb-8 text-3xl font-bold">Manage Products</h2>
 
-      {/* table for book data */}
+      {/* table for product data */}
       <Table className="lg:w-[1180px]">
         <Table.Head>
           <Table.HeadCell>No</Table.HeadCell>

@@ -21,8 +21,8 @@ const UploadProduct = () => {
   };
 
 
-  // handle book submission
-  const handleBookSubmit = (event) => {
+  // handle product submission
+  const handleProductSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
      
@@ -35,10 +35,10 @@ const UploadProduct = () => {
     // console.log(category);
 
     const price = form.price.value;
-    // console.log(bookDescription);
+    // console.log(price);
 
     const description = form.description.value;
-    // console.log(bookPDFURL);
+    // console.log(description);
 
     const productObj = {
       name, imageURL, price, description, category
@@ -54,20 +54,20 @@ const UploadProduct = () => {
       },
       body: JSON.stringify(productObj)
     }).then(res => res.json()).then(data => {
-      alert("Book Uploaded Sucessfully")
+      alert("Product Uploaded Sucessfully")
       form.reset();
     })
   }
   return (
     <div className="px-4 my-12">
       <h2 className="mb-8 text-3xl font-bold">Upload A Product</h2>
-      <form onSubmit={handleBookSubmit} className="flex lg:w-[1580px] flex-col flex-wrap gap-4">
+      <form onSubmit={handleProductSubmit} className="flex lg:w-[1580px] flex-col flex-wrap gap-4">
 
         {/* first row */}
         <div className="flex gap-8">
           <div className="lg:w-1/2">
             <div className="mb-2 block">
-              <Label htmlFor="name" value="Book Title" />
+              <Label htmlFor="name" value="Product Name" />
             </div>
             <TextInput
               id="name"
@@ -80,7 +80,7 @@ const UploadProduct = () => {
 
           <div className="lg:w-1/2">
             <div className="mb-2 block">
-              <Label htmlFor="price" value="price product" />
+              <Label htmlFor="price" value="Price" />
             </div>
             <TextInput
               id="price"
@@ -128,7 +128,7 @@ const UploadProduct = () => {
           </div>
         </div>
 
-        {/* bookdescription */}
+        {/* product description */}
 
         <div>
           <div className="mb-2 block">
@@ -143,14 +143,6 @@ const UploadProduct = () => {
             rows={4}
           />
         </div>
-
-        {/* book PDF Url */}
-        {/* <div>
-        <div className="mb-2 block">
-          <Label htmlFor="bookPDFURL" value="Book PDF Url" />
-        </div>
-        <TextInput id="bookPDFURL" type="text" name="bookPDFURL" placeholder="book PDF Url" required />
-      </div> */}
 
       <Button type="submit" className="mt-5">
         Upload

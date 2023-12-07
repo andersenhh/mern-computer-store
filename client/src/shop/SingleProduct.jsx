@@ -1,7 +1,7 @@
 import React from 'react'
 import { useLoaderData } from 'react-router-dom'
 
-const SingleBook = () => {
+const SingleProduct = () => {
     const {_id, name, imageURL} = useLoaderData();
   return (
     <div className='mt-28 px-4 lg:px-4'>
@@ -11,4 +11,4 @@ const SingleBook = () => {
   )
 }
 
-export default SingleBook
+export default SingleProduct

@@ -4,9 +4,8 @@ import Home from "../home/Home";
 import Shop from "../shop/shop";
 import About from "../components/About";
 import Blog from "../components/Blog";
-import SingleBook from "../shop/SingleBook"
+import SingleProduct from "../shop/SingleProduct"
 import DashboardLayout from "../dashboard/DashboardLayout";
-import Dashboard from "../dashboard/Dashboard";
 import SignUp from "../components/SignUp";
 import Login from "../components/Login";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
@@ -26,7 +25,7 @@ const router = createBrowserRouter([
       { path: "/shop", element: <Shop /> },
       { path: "/about", element: <About /> },
       { path: "/blog", element: <Blog /> },
-      { path: "/product/:id", element: <SingleBook/>, 
+      { path: "/product/:id", element: <SingleProduct/>, 
       loader: ({params}) => fetch(`${import.meta.env.VITE_LocalHost}/product/${params.id}`) },
     ],
   },
