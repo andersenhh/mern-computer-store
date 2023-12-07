@@ -45,7 +45,7 @@ const Review = () => {
         >
           {/* RATE */}
           <SwiperSlide className="shadow-2xl bg-white py-8 px-4 md:m-5 rounded-lg border">
-            <Avatar img="http://m.gettywallpapers.com/wp-content/uploads/2023/06/Beautiful-Anime-Girl-Profile-Pic.jpg" alt="" rounded className="w-10" />
+            <Avatar img="https://pic.onlinewebfonts.com/thumbnails/icons_76927.svg" alt="" rounded className="w-10" />
             <h5 className="text-lg font-medium">John Doe</h5>
             <p className="text-base">CEO, X Company</p>
             <div className="space-y-6">
@@ -69,7 +69,7 @@ const Review = () => {
           </SwiperSlide>
           {/* RATE */}
           <SwiperSlide className="shadow-2xl bg-white py-8 px-4 md:m-5 rounded-lg border">
-            <Avatar img="http://m.gettywallpapers.com/wp-content/uploads/2023/06/Beautiful-Anime-Girl-DP-For-Facebook.jpg" alt="" rounded className="w-10" />
+            <Avatar img="https://pic.onlinewebfonts.com/thumbnails/icons_76927.svg" alt="" rounded className="w-10" />
             <h5 className="text-lg font-medium">Mark</h5>
             <p className="text-base">CEO, ABC Company</p>
             <div className="space-y-6">
