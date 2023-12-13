@@ -6,7 +6,7 @@ const OtherProducts = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
+   const fetchData = () => {
     fetch(`${import.meta.env.VITE_LocalHost}/all-products`)
       .then((res) => res.json())
       .then((data) => {
@@ -15,9 +15,18 @@ const OtherProducts = () => {
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
-        setLoading(false);
+        // Retry fetching after a delay
+        setTimeout(() => {
+          fetchData();
+        }, 3000); // Adjust the delay as needed
       });
-  }, []);
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []); // Only run on mount
+
+
   return (
     <div>
         {loading ? (
